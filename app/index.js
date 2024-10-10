@@ -14,3 +14,5 @@ console.log("Servidor corriendo en el puerto", app.get("port"));
 //rutas
 
 app.get("/", (req,resp)=>resp.sendFile(__dirname + "/pages/login.html"));
+app.get("/register", (req,resp)=>resp.sendFile(__dirname + "/pages/register.html"));
+app.get("/admin", (req,resp)=>resp.sendFile(__dirname + "/pages/admin/admin.html"));
