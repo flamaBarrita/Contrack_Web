@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contrato</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="form.js" defer></script>
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 850px;
+            margin: auto;
+        }
+        .form-group label {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .form-control {
+            font-size: 1.05em;
+            padding: 10px;
+        }
+        h2 {
+            font-size: 2em;
+        }
+        .full-height {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f0f2f5;
+    margin-bottom: 20px; 
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 850px;
+    margin: auto;
+    margin-bottom: 30px; 
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <button onclick="history.back()" class="btn btn-secondary mb-3">Volver</button>
+    
+    <div class="form-container">
+
+        <h2 class="text-center mb-4">Información del Contrato</h2>
+        <form id="form-contrato">
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="contrato">Contrato</label>
+                    <p class="form-control"><%= contrato.contrato %></p>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="zona">Zona</label>
+                    <p class="form-control" ><%= contrato.zona %></p>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="estrategia">Estrategia</label>
+                    <p class="form-control"><%= contrato.estrategia %></p>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="firma">Firma</label>
+                    <p class="form-control"><%= contrato.firma %></p>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="obra">Obra</label>
+                    <p class="form-control"><%= contrato.obra %></p>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="contratista">Contratista</label>
+                    <p class="form-control"><%= contrato.contratista %></p>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="residente">Residente</label>
+                    <p class="form-control"><%= contrato.residente %></p>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="importe">Importe</label>
+                    <p class="form-control"><%= contrato.importe %></p>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="fecha_inicio">Fecha de Inicio</label>
+                    <% const formateadainicio = new Date(contrato.fecha_inicio).toISOString().split('T')[0]; %>
+                    <p class="form-control"><%= formateadainicio %></p>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fecha_termino">Fecha de Término</label>
+                    <% const formateadatermino = new Date(contrato.fecha_termino).toISOString().split('T')[0]; %>
+                    <p class="form-control"><%= formateadatermino %></p>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="plazo">Plazo</label>
+                    <p class="form-control"><%= contrato.plazo %></p>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="estatus">Estatus</label>
+                    <p class="form-control"><%= contrato.estatus %></p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

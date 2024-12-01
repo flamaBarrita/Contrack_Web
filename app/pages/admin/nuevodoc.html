@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contrato</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="form.js" defer></script>
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 850px;
+            margin: auto;
+        }
+        .form-group label {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .form-control {
+            font-size: 1.05em;
+            padding: 10px;
+        }
+        h2 {
+            font-size: 2em;
+        }
+        .full-height {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f0f2f5;
+    margin-bottom: 20px; 
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 850px;
+    margin: auto;
+    margin-bottom: 30px; 
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <button onclick="history.back()" class="btn btn-secondary mb-3">Volver</button>
+    
+    <div class="form-container">
+
+        <h2 class="text-center mb-4">Información del Contrato</h2>
+        <form id="form-contrato">
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="contrato">Contrato</label>
+                    <input type="text" class="form-control" id="contrato" placeholder="Número de contrato" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="zona">Zona</label>
+                    <input type="text" class="form-control" id="zona" placeholder="Zona" required>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="estrategia">Estrategia</label>
+                    <input type="text" class="form-control" id="estrategia" placeholder="Estrategia" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="firma">Firma</label>
+                    <input type="text" class="form-control" id="firma" placeholder="Firma" required>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="obra">Obra</label>
+                    <input type="text" class="form-control" id="obra" placeholder="Nombre de la obra" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="contratista">Contratista</label>
+                    <input type="text" class="form-control" id="contratista" placeholder="Nombre del contratista" required>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="residente">Residente</label>
+                    <input type="text" class="form-control" id="residente" placeholder="Nombre del residente" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="importe">Importe</label>
+                    <input type="number" class="form-control" id="importe" placeholder="Importe en MXN" required>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="fecha_inicio">Fecha de Inicio</label>
+                    <input type="date" class="form-control" id="fecha_inicio" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fecha_termino">Fecha de Término</label>
+                    <input type="date" class="form-control" id="fecha_termino" required>
+                </div>
+            </div>
+            <div class="form-row mb-3">
+                <div class="form-group col-md-6">
+                    <label for="plazo">Plazo</label>
+                    <input type="text" class="form-control" id="plazo" placeholder="Plazo en días" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="estatus">Estatus</label>
+                    <input type="text" class="form-control" id="estatus" placeholder="Estatus" required>
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#confirmModal">Enviar Información</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirmación de Envío</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea enviar la información del contrato?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" form="form-contrato" class="btn btn-primary">Confirmar Envío</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
