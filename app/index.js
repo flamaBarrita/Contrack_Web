@@ -15,7 +15,7 @@ import { modificarRol } from "./controllers/users.controller.js";
 //Servidor
 
 const app = express();
-app.set("port",4000);
+app.set("port",3306);
 app.listen(app.get("port"));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
