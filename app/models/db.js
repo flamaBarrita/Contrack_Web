@@ -1,10 +1,11 @@
 import mysql from 'mysql2/promise'; //conexión a la base de datos
 
 const db = await mysql.createConnection({
-    host: 'localhost',
+    host: 'mysql.railway.internal',
     user: 'root',
-    password: '',
-    database: 'contrack'
+    password: 'xaveWluBuYHfErwWXMvoPiRRZCdJSXAe',
+    database: 'railway',
+    port: '3306'
 });
 
 export default db;
