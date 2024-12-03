@@ -12,12 +12,14 @@ import { saveContract } from "./controllers/formulario.controller.js";
 import { mostrarContrato } from "./controllers/mostrar.controller.js";
 import { mostrarUsers } from "./controllers/users.controller.js";
 import { modificarRol } from "./controllers/users.controller.js";
-
 //Servidor
+
 const app = express();
+app.set("port",4000);
+app.listen(app.get("port"));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-// console.log("Servidor corriendo en el puerto", app.get("port"));
+console.log("Servidor corriendo en el puerto", app.get("port"));
   
 //configuracion
 
