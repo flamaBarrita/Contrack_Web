@@ -34,7 +34,7 @@ app.get("/admin", authorization.soloVista,(req,resp)=>resp.sendFile(__dirname + 
 app.post("/api/register", authentication.register);
 app.post("/api/login", authentication.login);
 app.get("/nuevodoc",  authorization.soloVista,(req, resp) => {resp.sendFile(__dirname + "/pages/admin/nuevodoc.html");});
-app.get("/logout", (req, res) => {
+app.get("/api/logout", (req, res) => {
     try {
         // Eliminar la cookie 'jwt'
         res.clearCookie("jwt", { path: "/" }); // Asegúrate de que el path coincide con el configurado en la creación de la cookie.
