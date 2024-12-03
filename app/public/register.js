@@ -9,7 +9,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
         password: e.target.querySelector("#password").value  // Valor del password
     };
         console.log(data);
-    const res = await fetch("http://localhost:4000/api/register",{
+    const res = await fetch("https://contrackweb-production.up.railway.app/api/register",{
         method:"POST",
         headers:{
             "Content-Type" : "application/json"

@@ -5,7 +5,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     const user =  e.target.querySelector("#username").value;  // Valor del username
     const password = e.target.querySelector("#password").value;  // Valor del password
 
-    const res = await fetch("http://localhost:4000/api/login",{
+    const res = await fetch("https://contrackweb-production.up.railway.app/login",{
         method:"POST",
         headers:{
             "Content-Type" : "application/json"
