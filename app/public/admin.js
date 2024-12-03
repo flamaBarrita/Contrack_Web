@@ -2,7 +2,7 @@ document.getElementsByTagName("button")[0].addEventListener("click", async (e) =
     e.preventDefault();
 
     // Hacer una solicitud al servidor para cerrar sesión
-    const response = await fetch("/logout", { method: "GET" });
+    const response = await fetch("https://contrackweb-production.up.railway.app/api/logout", { method: "GET" });
 
     if (response.ok) {
         // Redirigir al inicio de sesión o página principal
