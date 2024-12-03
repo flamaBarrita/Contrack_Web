@@ -33,19 +33,8 @@ app.get("/register", authorization.soloPublico, (req,resp)=>resp.sendFile(__dirn
 app.get("/admin", authorization.soloVista,(req,resp)=>resp.sendFile(__dirname + "/pages/admin/admin.html"));
 app.post("/api/register", authentication.register);
 app.post("/api/login", authentication.login);
+app.get("/api/logout", authentication.logout);
 app.get("/nuevodoc",  authorization.soloVista,(req, resp) => {resp.sendFile(__dirname + "/pages/admin/nuevodoc.html");});
-app.get("/api/logout", (req, res) => {
-    try {
-        // Eliminar la cookie 'jwt'
-        res.clearCookie("jwt", { path: "/" }); // Asegúrate de que el path coincide con el configurado en la creación de la cookie.
-        
-        // Redirigir al usuario a la página de inicio de sesión o inicio
-        res.status(200).json({ status: "ok", message: "Sesión cerrada exitosamente", redirect: "/login" });
-    } catch (error) {
-        console.error("Error al cerrar sesión:", error);
-        res.status(500).json({ status: "error", message: "Error al cerrar sesión" });
-    }
-});
 app.post("/api/submit-contract",  authorization.soloVista, saveContract);
 app.get("/busqueda",  authorization.soloVista, (req, resp) => {resp.sendFile(__dirname + "/pages/admin/busqueda.html");});
 app.get("/permisos",  authorization.soloVista,(req, resp) => {resp.sendFile(__dirname + "/pages/admin/roles.html");});

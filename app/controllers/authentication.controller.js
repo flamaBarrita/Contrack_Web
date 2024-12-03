@@ -92,5 +92,22 @@ export const method = {
             console.error('Error en el proceso de login:', error);
             res.status(500).json({ message: 'Error en el servidor.' });
         }
+    },
+    
+    logout: async (req, res) => {
+        try {
+            res.clearCookie("jwt", { path: "/" });
+            return res.status(200).json({
+                status: "success",
+                message: "Sesión cerrada exitosamente",
+                redirect: "/login"
+            });
+        } catch (error) {
+            console.error("Error al cerrar sesión:", error);
+            return res.status(500).json({
+                status: "error",
+                message: "Error al cerrar sesión. Intente nuevamente."
+            });
+        }
     }
 };
