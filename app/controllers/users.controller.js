@@ -2,7 +2,7 @@ import db from '../models/db.js';
 
 export const mostrarUsers = async (req, res) => {
     try {
-        const [rows] = await db.execute("SELECT id, user, email, role FROM usuarios WHERE user <> 'test'");
+        const [rows] = await db.execute("SELECT id, user, email, role FROM usuarios WHERE user <> 'mariobarrita'");
         res.json(rows);
     } catch (error) {
         console.error("Error al obtener usuarios:", error);
