@@ -1,8 +1,14 @@
-document.getElementsByTagName("button")[0].addEventListener("click", (e) => {
+document.getElementsByTagName("button")[0].addEventListener("click", async (e) => {
     e.preventDefault();
-    // Elimina la cookie `jwt` configurando sus propiedades correctamente
-    document.cookie = "jwt=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly;";
-    
-    // Redirige al usuario
-    window.location.assign("/");
+
+    // Hacer una solicitud al servidor para cerrar sesión
+    const response = await fetch("/logout", { method: "GET" });
+
+    if (response.ok) {
+        // Redirigir al inicio de sesión o página principal
+        const data = await response.json();
+        window.location.assign(data.redirect);
+    } else {
+        console.error("Error al cerrar sesión");
+    }
 });
