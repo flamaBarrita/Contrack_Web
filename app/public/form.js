@@ -19,7 +19,7 @@ document.getElementById('form-contrato').addEventListener('submit', function(e) 
     };
 
     // Enviar los datos al servidor
-    fetch('/submit-contract', {
+    fetch('/api/submit-contract', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
