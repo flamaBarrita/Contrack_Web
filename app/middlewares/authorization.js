@@ -21,7 +21,6 @@ async function soloPublico(req,res,next){
     console.log(loggeado)
     if(!loggeado) return next();
     return res.redirect("/admin");
-
 }
 
 async function revisarcookie(req){

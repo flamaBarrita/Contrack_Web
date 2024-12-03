@@ -34,7 +34,7 @@ app.get("/admin", authorization.soloVista,(req,resp)=>resp.sendFile(__dirname + 
 app.post("/api/register", authentication.register);
 app.post("/api/login", authentication.login);
 app.get("/nuevodoc",  authorization.soloVista,(req, resp) => {resp.sendFile(__dirname + "/pages/admin/nuevodoc.html");});
-app.post("/submit-contract",  authorization.soloVista, saveContract);
+app.post("/api/submit-contract",  authorization.soloVista, saveContract);
 app.get("/busqueda",  authorization.soloVista, (req, resp) => {resp.sendFile(__dirname + "/pages/admin/busqueda.html");});
 app.get("/permisos",  authorization.soloVista,(req, resp) => {resp.sendFile(__dirname + "/pages/admin/roles.html");});
 app.get("/contracts/:contractNumber",  authorization.soloVista,mostrarContrato);

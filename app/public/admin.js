@@ -1,6 +1,8 @@
-document.getElementsByTagName("button")[0].addEventListener("click", (e)=>{
+document.getElementsByTagName("button")[0].addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("pruebaaaa")
-    document.cookie = 'jwt=; Path=/; Expires =Thu, 01 Jan 1970 00:00:01 GMT;'
+    // Elimina la cookie `jwt` configurando sus propiedades correctamente
+    document.cookie = "jwt=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; HttpOnly;";
+    
+    // Redirige al usuario
     window.location.assign("/");
-})
+});
